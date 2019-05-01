@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgForm } from '@angular/forms';
+import { TennisPartService } from '../Shared/TennisPart.service';
 @Component({
   selector: 'app-profil',
   templateUrl: './profil.component.html',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: TennisPartService) { }
 
   ngOnInit() {
   }
