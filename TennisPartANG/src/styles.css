@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+.jumbotron {
+    background: #C95A1B;
+    color: white;
+    font-weight: bold;
+}
+
+.bg-white {
+    background: white;
+}
+
+.logo-small {
+    color: #c95a1b;
+    font-size: 50px;
+    padding-top: 30px;
+}
+.logo-medium {
+    color: #c95a1b;
+    font-size: 100px;
+    padding-top: 30px;
+}
+.Padding30
+{
+    padding: 30px;
+}
+
+
+
+.parallaxHome {
+    /* The image used */
+    background-image: url(.\app\Images\Nadal.jpg);
+    /* Set a specific height */
+    height: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
