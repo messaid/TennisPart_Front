@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import {Joueur} from '../Models/Joueur'
 import{ HttpClient} from '@angular/common/http'
+import { Classement } from '../Models/Classement';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TennisPartService {
-  formData : Joueur
-  readonly rootUrl ='http://localhost:55717/api';
-
-  CO : string;
+  formData : Joueur;
+  readonly rootUrl ='http://localhost:60978/api';
+  list : Classement[];
   constructor(private http:HttpClient) {
     this.formData = 
     {
@@ -19,8 +19,8 @@ export class TennisPartService {
         NumeroTel: "",
         Email: "",
         Photo:"",
-        Classement:"",
-        Age:16
+        IdClassement:"",
+        Age:""
     };
 
    }
@@ -32,10 +32,10 @@ export class TennisPartService {
 //     return this.http.delete(this.rootUrl+"/PaymentDeatils/"+id);
 //    }
 
-//    postPaymentDetail(formData:PaymentDetail)
-//    {
-//      return this.http.post(this.rootUrl+"/PaymentDeatils",formData);
-//    }
+   postProfilDetail(formData:Joueur)
+   {
+     return this.http.post(this.rootUrl+"/Joueurs",formData);
+   }
 
 
 //    putPaymentDetail(formData:PaymentDetail)
@@ -43,9 +43,9 @@ export class TennisPartService {
 //      return this.http.put(this.rootUrl+"/PaymentDeatils/"+formData.PmId,formData);
 //    }
 
-//   refreshList(){
-//     this.http.get(this.rootUrl + '/PaymentDeatils')
-//     .toPromise()
-//     .then(res => this.list = res as PaymentDetail[]);
-//   }
+  GetClassementList(){
+    this.http.get(this.rootUrl + '/Classements')
+    .toPromise()
+    .then(res => this.list = res as Classement[]);
+  }
 }

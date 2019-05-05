@@ -2,9 +2,9 @@ export class Joueur {
     IdJoueur: number;
     Nom: string;
     Prenom: string;
-    Classement: string;
+    IdClassement: string;
     NumeroTel: string;
     Email: string;
-    Age: number;;
+    Age: string;;
     Photo : string;
 }
