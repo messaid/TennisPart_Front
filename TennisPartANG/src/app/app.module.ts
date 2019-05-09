@@ -6,16 +6,19 @@ import { ProfilModule } from './profil/profil.module';
 import {AppRoutingModule} from './app-routing.module';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { HttpClientModule } from "@angular/common/http";
+import {UserModule} from './authentification/user.module';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorPageComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AccueilModule,
     ProfilModule,
+    UserModule,
     HttpClientModule
   ],
   providers: [],
