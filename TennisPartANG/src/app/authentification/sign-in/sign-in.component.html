@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
       
-      <form #form='ngForm' (submit)="onSubmit(form)" class="col-sm-4 col-md-4 ">
+      <form #form='ngForm' (submit)="onSubmit(form)" autocomplete="off" class="col-sm-4 col-md-4 ">
         
           <div class="form-group">
               <input required type="text" class="form-control" 
@@ -13,10 +13,12 @@
               id="mdp" name="mdp" placeholder="Mot de passe">
           </div>
        
-          <input type="submit" [disabled] = "!form.valid" class="btn btn-danger" value="Enregistrer">
+          <input type="submit" [disabled] = "!form.valid" class="btn btn-danger" value="Sign In!">
       </form>
         
 
   </div>
 
 </div>
+
+

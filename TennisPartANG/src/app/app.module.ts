@@ -7,6 +7,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { HttpClientModule } from "@angular/common/http";
 import {UserModule} from './authentification/user.module';
+import { TennisPartService } from './Shared/TennisPart.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import {UserModule} from './authentification/user.module';
     UserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [TennisPartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
