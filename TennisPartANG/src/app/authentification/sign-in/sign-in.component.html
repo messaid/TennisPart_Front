@@ -1,19 +1,31 @@
 <div class="container-fluid">
   <div class="row">
       
-      <form #form='ngForm' (submit)="onSubmit(form)" autocomplete="off" class="col-sm-4 col-md-4 ">
+      <form  #form='ngForm' (submit)="onSubmit(form)" autocomplete="off" class="col-sm-4 col-md-4 div-login">
         
-          <div class="form-group">
-              <input required type="text" class="form-control" 
-              id="Username" name="Username" placeholder="Username">
-          </div>
+        <div class="form-group ">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-user-circle Logo-login"></i>
+                    </div>
+                </div>            
+                <input required placeholder="Pseudo" class="form-control" type="text" #UserName="ngModel" name="UserName" [(ngModel)]="formModelLogin.UserName">
+           </div>
+        </div>
 
-          <div class="form-group">
-              <input required type="text" class="form-control" 
-              id="mdp" name="mdp" placeholder="Mot de passe">
-          </div>
+        <div class="form-group ">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-key Logo-login"></i>
+                    </div>
+                </div>  
+                <input type="password" placeholder="Mot de passe" class="form-control" #Password="ngModel" name="Password" [(ngModel)]="formModelLogin.Password" required>
+            </div>
+        </div>
        
-          <input type="submit" [disabled] = "!form.valid" class="btn btn-danger" value="Sign In!">
+          <input type="submit" [disabled] = "!form.valid" class="btn btn-sm"  value="Connexion!">
       </form>
         
 

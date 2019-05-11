@@ -57,10 +57,6 @@ export class TennisPartService {
       }
     }
 
-//    postDeleteDetails(id)
-//    {
-//     return this.http.delete(this.rootUrl+"/PaymentDeatils/"+id);
-//    }
 
    postProfilDetail(formData:Joueur)
    {
@@ -68,10 +64,26 @@ export class TennisPartService {
    }
 
 
-//    putPaymentDetail(formData:PaymentDetail)
-//    {
-//      return this.http.put(this.rootUrl+"/PaymentDeatils/"+formData.PmId,formData);
-//    }
+   register()
+  {
+    var body ={
+      UserName : this.formModel.value.UserName,
+      Email : this.formModel.value.Email,
+      FullName : this.formModel.value.FullName,
+      Password : this.formModel.value.Passwords.Password
+    };
+    return this.http.post(this.rootUrl+"/ApplicationUser/Register",body);
+  }
+
+  login(formData)
+  {
+    return this.http.post(this.rootUrl+"/ApplicationUser/Login",formData);
+  }
+  getUserProfile()
+  {
+    return this.http.get(this.rootUrl+"/UserProfil");
+  }
+
 
   GetClassementList(){
     this.http.get(this.rootUrl + '/Classements')

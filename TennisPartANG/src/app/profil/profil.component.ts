@@ -23,4 +23,10 @@ export class ProfilComponent implements OnInit {
     )
   }
 
+  onLogout()
+{
+  localStorage.removeItem('token');
+  this.router.navigate(['/user/login'])
+}
+
 }

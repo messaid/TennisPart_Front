@@ -6,6 +6,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { UserComponent } from './authentification/user.component';
 import { SignUpComponent } from './authentification/sign-up/sign-up.component';
 import { SignInComponent } from './authentification/sign-in/sign-in.component';
+import { AuthGuard } from './guard/auth.guard';
 
 // routes
 const appRoutes: Routes = [
@@ -16,8 +17,8 @@ const appRoutes: Routes = [
      {path:'registration',component:SignUpComponent}, ///user/registration
      {path:'login',component:SignInComponent} ///user/login
     ]},
-    { path: 'accueil', component:AccueilComponent },
-	{ path: 'profil', component:ProfilComponent },
+    { path: 'accueil', component:AccueilComponent ,canActivate:[AuthGuard]},
+	{ path: 'profil', component:ProfilComponent,canActivate:[AuthGuard] },
 	{ path: '**', component: ErrorPageComponent}
 ];
 

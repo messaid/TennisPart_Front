@@ -1,4 +1,10 @@
-<div class="container-fluid">
+<nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand text-white">Tennis'Part</a>
+        <div class="bg-white">{{usedetails.Fullname}}</div>
+        <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+</nav>
+
+<div class="container-fluid div-login text-center">
     <div class="row">
         
         <form #form='ngForm' (submit)="onSubmit(form)" class="col-sm-4 col-md-4 ">

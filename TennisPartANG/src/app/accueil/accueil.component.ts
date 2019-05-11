@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from'@angular/router'
+import { TennisPartService } from '../Shared/TennisPart.service';
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
@@ -7,10 +8,23 @@ import {Router} from'@angular/router'
 })
 export class AccueilComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  usedetails;
+  constructor(private router:Router, private service:TennisPartService) {
+
+    this.usedetails =
+    {
+      Fullname: '',
+      Email: '',
+      UserName: ''
+    }
+   }
 
   ngOnInit() {
-    
+    this.service.getUserProfile().subscribe
+    (
+      (res:any)=>{this.usedetails = res},
+      err=>{console.log(err)},
+    )
   }
 
   onClickHistory()
@@ -36,4 +50,11 @@ export class AccueilComponent implements OnInit {
     let link = ['/profil']
     this.router.navigate(link);
   }
+
+onLogout()
+{
+  localStorage.removeItem('token');
+  this.router.navigate(['/user/login'])
+}
+
 }
