@@ -30,23 +30,16 @@
     height: 0;
 }
 
-.ThemePhoto
-{
-    height: 180;
-    
-}
-
-
-.parallaxHome {
-    /* The image used */
+/* .parallaxHome {
+    /* The image used 
     background-image: url(.\app\Images\Nadal.jpg);
-    /* Set a specific height */
+    /* Set a specific height 
     height: auto;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */
 
 input[type=number], input[type=text],input[type=password], input[type=email], select {
     width: 100%;
@@ -58,7 +51,7 @@ input[type=number], input[type=text],input[type=password], input[type=email], se
 }
 .div-login
 {
-    margin: 8px 0; 
+    margin: 12px 0; 
 }
 
 

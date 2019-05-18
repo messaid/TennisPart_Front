@@ -7,11 +7,13 @@
     <div class="row">
             <div class="col-12">
                     <div class="text-center">
-                            <img click src="http://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" class="rounded-circle">
-                    </div>     
+                            <img [src]="ImageUrl" class="rounded-circle" style="width: 180px;height: 180px">
+                            <!-- (click)="selectFile.click()" -->
+                            <input type="file" #Image  accept="image/*" style="display: none" (change)="onFileUpload($event.target.files)" #selectFile>
+                        </div>     
                   </div>
 
-        <form #form='ngForm' (submit)="onSubmit(form)" class="col-sm-4 col-md-4 ">
+        <form #form='ngForm' (submit)="onSubmit(form)" class="col-sm-4 col-md-4 div-login">
             <input type="hidden" 
             #Id="ngModel" [(ngModel)]="formData.Id"  
             name="Id" [value] = "formData.Id">

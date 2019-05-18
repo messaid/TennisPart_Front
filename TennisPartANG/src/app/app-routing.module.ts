@@ -7,6 +7,7 @@ import { UserComponent } from './authentification/user.component';
 import { SignUpComponent } from './authentification/sign-up/sign-up.component';
 import { SignInComponent } from './authentification/sign-in/sign-in.component';
 import { AuthGuard } from './guard/auth.guard';
+import { PosterDemandComponent } from './poster-demand/poster-demand.component';
 
 // routes
 const appRoutes: Routes = [
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
      {path:'login',component:SignInComponent} ///user/login
     ]},
     { path: 'accueil', component:AccueilComponent ,canActivate:[AuthGuard]},
-	{ path: 'profil', component:ProfilComponent,canActivate:[AuthGuard] },
+	{ path: 'profil', component:ProfilComponent,canActivate:[AuthGuard]},
+	{ path: 'posterdemande', component:PosterDemandComponent,canActivate:[AuthGuard]},
 	{ path: '**', component: ErrorPageComponent}
 ];
 

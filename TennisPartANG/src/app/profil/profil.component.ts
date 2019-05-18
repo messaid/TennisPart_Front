@@ -10,11 +10,14 @@ import { Classement } from '../Models/Classement';
   styles: []
 })
 export class ProfilComponent implements OnInit {
-
-  constructor(private service: TennisPartService,private router:Router) { }
-  ok : number
   list : Classement[];
   formData : Joueur
+  PhotoChanged : boolean = false
+  fileToUpload : File = null;
+  ImageUrl : string = "./assets/Img/20.png"
+  constructor(private service: TennisPartService,private router:Router) { }
+
+
   ngOnInit() {
     this.formData = 
     {
@@ -44,6 +47,18 @@ export class ProfilComponent implements OnInit {
     .then(res => this.list = res as Classement[]);
     console.log(this.list)
   }
+
+  // onFileUpload(file : FileList){
+  //   this.fileToUpload = file.item(0);
+  //   var reader = new FileReader();
+  //   reader.onload = (event:any) => {
+  //   this.formData.Photo = event.target.result;
+  //   };
+  //     reader.readAsDataURL(this.fileToUpload);
+     
+  //     this.PhotoChanged = true
+  //     console.log(this.PhotoChanged)
+  //   }
 
 
   onSubmit(form:NgForm)

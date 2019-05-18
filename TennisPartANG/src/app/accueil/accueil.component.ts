@@ -31,7 +31,8 @@ export class AccueilComponent implements OnInit {
 
   onClickFind()
   {
-
+    let link = ['/posterdemande']
+    this.router.navigate(link);
   }
 
   onClickProfil()

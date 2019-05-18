@@ -11,6 +11,7 @@ import { TennisPartService } from './Shared/TennisPart.service';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './guard/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PosterDemandModule } from './poster-demand/poster-demand.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     AccueilModule,
+    PosterDemandModule,
     ProfilModule,
     UserModule,
     HttpClientModule,
