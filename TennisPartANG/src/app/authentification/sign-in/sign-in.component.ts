@@ -30,7 +30,7 @@ export class SignInComponent implements OnInit {
         err=>{
           if(err.status==400)
           {
-            this.toaster.error('mdp khasr','error')
+            this.toaster.error('mdp khasr','error');
           }
         }
 

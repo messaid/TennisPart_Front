@@ -8,25 +8,11 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
   providedIn: 'root'
 })
 export class TennisPartService {
-  formData : Joueur;
+
   formModel : FormGroup
   readonly rootUrl ='http://localhost:60978/api';
-  list : Classement[];
   constructor(private fb:FormBuilder,private http:HttpClient) {
-    this.formData = 
-    {
-        IdJoueur: 0,
-        Prenom: "",
-        Nom: "",
-        NumeroTel: "",
-        Email: "",
-        Photo:"",
-        IdClassement:"",
-        Age:""
-    };
-    console.log(this.formData);
-    console.log('hahowa');
-    
+       
     this.formModel = this.fb.group({
       UserName: ['', Validators.required],
       Email: ['', Validators.email],
@@ -38,10 +24,7 @@ export class TennisPartService {
   
     });
 
-    console.log(this.formModel);
-
    }
-
 
    comparePasswords(fb:FormGroup){
     let confirmpass = fb.get('ConfirmPassword');
@@ -60,7 +43,8 @@ export class TennisPartService {
 
    postProfilDetail(formData:Joueur)
    {
-     return this.http.post(this.rootUrl+"/Joueurs",formData);
+     console.log(formData)
+     return this.http.post(this.rootUrl+"/UserProfil/UpdateProfil",formData);
    }
 
 
@@ -79,15 +63,14 @@ export class TennisPartService {
   {
     return this.http.post(this.rootUrl+"/ApplicationUser/Login",formData);
   }
+
   getUserProfile()
   {
-    return this.http.get(this.rootUrl+"/UserProfil");
+    return this.http.get(this.rootUrl+"/UserProfil/GetProfil");
   }
 
 
   GetClassementList(){
-    this.http.get(this.rootUrl + '/Classements')
-    .toPromise()
-    .then(res => this.list = res as Classement[]);
+    return this.http.get(this.rootUrl + '/Classements');
   }
 }

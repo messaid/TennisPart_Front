@@ -10,6 +10,7 @@ import {UserModule} from './authentification/user.module';
 import { TennisPartService } from './Shared/TennisPart.service';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './guard/auth.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AuthInterceptor } from './guard/auth.interceptor';
     ProfilModule,
     UserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
   providers: [TennisPartService,

@@ -30,6 +30,13 @@
     height: 0;
 }
 
+.ThemePhoto
+{
+    height: 180;
+    
+}
+
+
 .parallaxHome {
     /* The image used */
     background-image: url(.\app\Images\Nadal.jpg);

@@ -8,23 +8,12 @@ import { TennisPartService } from '../Shared/TennisPart.service';
 })
 export class AccueilComponent implements OnInit {
 
-  usedetails;
   constructor(private router:Router, private service:TennisPartService) {
 
-    this.usedetails =
-    {
-      Fullname: '',
-      Email: '',
-      UserName: ''
-    }
    }
 
   ngOnInit() {
-    this.service.getUserProfile().subscribe
-    (
-      (res:any)=>{this.usedetails = res},
-      err=>{console.log(err)},
-    )
+   
   }
 
   onClickHistory()

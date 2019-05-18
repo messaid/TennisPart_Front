@@ -1,4 +1,4 @@
 export class Classement {
-    IdClassement: number;
+    Id: number;
     Classement: string;
 }
